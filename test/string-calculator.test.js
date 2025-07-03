@@ -16,3 +16,9 @@ test("return sum when two numbers are given",()=>{
     expect(calc.Add("1,2")).toBe(3);
     expect(calc.Add("30,4")).toBe(34);
 })
+
+test("returning sum with any amount of numbers",()=>{
+    const calc = new StringCalculator();
+    expect(calc.Add("11,12,13")).toBe(36);
+    expect(calc.Add("5,5,5,5")).toBe(20);
+})
