@@ -28,3 +28,9 @@ test("returning sum when new line between numbers ",()=>{
     expect(calc.Add("1\n2,3")).toBe(6);
     expect(calc.Add("6\n8\n7")).toBe(21);
 })
+
+test("returning sum when new line between numbers ",()=>{
+    const calc = new StringCalculator();
+    expect(calc.Add("//;\n1;2”")).toBe(3);
+    expect(calc.Add("1\n2,3")).toBe(6);
+})
