@@ -1,5 +1,6 @@
 class StringCalculator{
     Add(numbers){
+        if(numbers=="")return 0;
         return 0;
     }
 }
