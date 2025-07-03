@@ -10,3 +10,9 @@ test("returing self when one number is given",()=>{
     expect(calc.Add("1")).toBe(1);
     expect(calc.Add("2")).toBe(2);
 })
+
+test("return sum when two numbers are given",()=>{
+    const calc = new StringCalculator();
+    expect(calc.Add("1,2")).toBe(3);
+    expect(calc.Add("30,4")).toBe(34);
+})
