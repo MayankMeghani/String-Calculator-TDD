@@ -1,0 +1,22 @@
+{
+  "name": "string-calculator-tdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MayankMeghani/String-Calculator-TDD.git"
+  },
+  "author": "mayank meghani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MayankMeghani/String-Calculator-TDD/issues"
+  },
+  "homepage": "https://github.com/MayankMeghani/String-Calculator-TDD#readme",
+  "description": "",
+  "dependencies": {
+    "jest": "^30.0.4"
+  }
+}
