@@ -22,3 +22,9 @@ test("returning sum with any amount of numbers",()=>{
     expect(calc.Add("11,12,13")).toBe(36);
     expect(calc.Add("5,5,5,5")).toBe(20);
 })
+
+test("returning sum when new line between numbers ",()=>{
+    const calc = new StringCalculator();
+    expect(calc.Add("1\n2,3")).toBe(6);
+    expect(calc.Add("6\n8\n7")).toBe(21);
+})
