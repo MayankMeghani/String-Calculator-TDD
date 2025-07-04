@@ -40,3 +40,9 @@ test("returning exception for negative number ",()=>{
     expect(()=>calc.Add("1,-2,3")).toThrow("negatives not allowed: -2");
     expect(()=>calc.Add("4,9,3,-5")).toThrow("negatives not allowed: -5");
 })
+
+test("returning exception for multiple negative numbers",()=>{
+    const calc = new StringCalculator();
+    expect(()=>calc.Add("1,-2,-3")).toThrow("negatives not allowed: -2,-3");
+    expect(()=>calc.Add("4,9,-3,-5")).toThrow("negatives not allowed: -3,-5");
+})
