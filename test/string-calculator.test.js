@@ -34,3 +34,9 @@ test("returning sum when new line between numbers ",()=>{
     expect(calc.Add("//;\n1;2")).toBe(3);
     expect(calc.Add("1\n2,3")).toBe(6);
 })
+
+test("returning exception for negative number ",()=>{
+    const calc = new StringCalculator();
+    expect(()=>calc.Add("1,-2,3")).toThrow("negatives not allowed: -2");
+    expect(()=>calc.Add("4,9,3,-5")).toThrow("negatives not allowed: -5");
+})

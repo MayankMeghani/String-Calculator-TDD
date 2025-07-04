@@ -1,7 +1,7 @@
 class StringCalculator{
     Add(numbers){
         if(numbers==="")return 0;
-            let delm = /,|\n/;
+        let delm = /,|\n/;
         if(numbers[0]==="/" && numbers[1]==="/" && numbers[3]==="\n"){
             delm = numbers[2];
             numbers = numbers.slice(4); 
