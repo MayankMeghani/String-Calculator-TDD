@@ -1,6 +1,4 @@
-function escapeRegex(s) {
-return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
+const { escapeRegex } = require("./utils");
 
 class StringCalculator{
     constructor(){
@@ -29,14 +27,7 @@ class StringCalculator{
             str = str.slice(0, -1);
             delm = new RegExp(str);
             numbers = numbers.slice(index+2); 
-        }
-
-        if(numbers[0]==="/" && numbers[1]==="/" && numbers[2]==="["){
-            const index = numbers.indexOf("]\n"); 
-            delm = numbers.slice(3, index);
-            numbers = numbers.slice(index+2); 
-        }
-        if(numbers[0]==="/" && numbers[1]==="/" && numbers[3]==="\n"){
+        }else if(numbers[0]==="/" && numbers[1]==="/" && numbers[3]==="\n"){
             delm = numbers[2];
             numbers = numbers.slice(4); 
         }
