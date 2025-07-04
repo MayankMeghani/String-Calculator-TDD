@@ -10,6 +10,9 @@ class StringCalculator{
         const nums = numbers.split(delm).map(Number);
         let sum = 0;
         nums.forEach(n => {    
+            if(n<0){
+                throw new Error("negatives not allowed: " + n);
+            }
             sum += n;
         });
         return sum;
