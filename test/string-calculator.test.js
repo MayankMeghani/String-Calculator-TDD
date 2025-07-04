@@ -59,3 +59,9 @@ test("retuning sum ignoring numbers grater than 1000",()=>{
     expect(calc.Add("2,1001")).toBe(2);
     expect(calc.Add("1001,1002")).toBe(0);
 })
+
+test("returning sum with any number of delimeters",()=>{
+    const calc = new StringCalculator();
+    expect(calc.Add("//[***]\n1***2***3")).toBe(6);
+    expect(calc.Add("//[##]\n5##6##7")).toBe(18); 
+})
