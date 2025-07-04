@@ -1,5 +1,14 @@
 class StringCalculator{
+    constructor(){
+        this.count = 0;
+    }
+
+    getCalledCount(){
+        return this.count;
+    }
+    
     Add(numbers){
+        this.count++;
         if(numbers==="")return 0;
         let delm = /,|\n/;
         if(numbers[0]==="/" && numbers[1]==="/" && numbers[3]==="\n"){
