@@ -11,8 +11,7 @@ class StringCalculator{
 
         const negatives = nums.filter(n => n < 0);
         if(negatives.length > 0){
-            const numbers = negatives.join(",");
-            throw new Error("negatives not allowed: " + numbers);
+            throw new Error("negatives not allowed: " + negatives.join(","));
         }
         
         let sum = 0;
