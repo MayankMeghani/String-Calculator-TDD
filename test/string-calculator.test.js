@@ -46,3 +46,10 @@ test("returning exception for multiple negative numbers",()=>{
     expect(()=>calc.Add("1,-2,-3")).toThrow("negatives not allowed: -2,-3");
     expect(()=>calc.Add("4,9,-3,-5")).toThrow("negatives not allowed: -3,-5");
 })
+
+test("ruturning count of Add() function call",()=>{
+    const calc = new StringCalculator();
+    expect(calc.getCalledCount()).toBe(0);
+    calc.Add("1,2");
+    expect(calc.getCalledCount()).toBe(1);
+})
