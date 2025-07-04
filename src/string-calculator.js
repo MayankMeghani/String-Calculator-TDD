@@ -8,11 +8,14 @@ class StringCalculator{
         }
         
         const nums = numbers.split(delm).map(Number);
+
+        const negative = nums.find(n => n < 0);
+        if(negative !== undefined){
+            throw new Error("negatives not allowed: " + negative);
+        }
+        
         let sum = 0;
-        nums.forEach(n => {    
-            if(n<0){
-                throw new Error("negatives not allowed: " + n);
-            }
+        nums.forEach(n => {
             sum += n;
         });
         return sum;
