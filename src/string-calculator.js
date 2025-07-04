@@ -9,9 +9,10 @@ class StringCalculator{
         
         const nums = numbers.split(delm).map(Number);
 
-        const negative = nums.find(n => n < 0);
-        if(negative !== undefined){
-            throw new Error("negatives not allowed: " + negative);
+        const negatives = nums.filter(n => n < 0);
+        if(negatives.length > 0){
+            const numbers = negatives.join(",");
+            throw new Error("negatives not allowed: " + numbers);
         }
         
         let sum = 0;
