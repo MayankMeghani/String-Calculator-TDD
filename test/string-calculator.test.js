@@ -53,3 +53,9 @@ test("ruturning count of Add() function call",()=>{
     calc.Add("1,2");
     expect(calc.getCalledCount()).toBe(1);
 })
+
+test("retuning sum ignoring numbers grater than 1000",()=>{
+    const calc = new StringCalculator();
+    expect(calc.Add("2,1001")).toBe(2);
+    expect(calc.Add("1001,1002")).toBe(0);
+})
