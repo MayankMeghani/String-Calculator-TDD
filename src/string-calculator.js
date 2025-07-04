@@ -6,7 +6,7 @@ class StringCalculator{
     getCalledCount(){
         return this.count;
     }
-    
+
     Add(numbers){
         this.count++;
         if(numbers==="")return 0;
@@ -25,6 +25,7 @@ class StringCalculator{
         
         let sum = 0;
         nums.forEach(n => {
+            if(n > 1000) return; 
             sum += n;
         });
         return sum;
