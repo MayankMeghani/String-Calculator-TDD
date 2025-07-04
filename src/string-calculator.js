@@ -23,11 +23,8 @@ class StringCalculator{
             throw new Error("negatives not allowed: " + negatives.join(","));
         }
         
-        let sum = 0;
-        nums.forEach(n => {
-            if(n > 1000) return; 
-            sum += n;
-        });
+        let sum = nums.filter(n => n <= 1000).reduce((a, b) => a + b,0);
+
         return sum;
          
     }
