@@ -1,3 +1,7 @@
+function escapeRegex(s) {
+return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 class StringCalculator{
     constructor(){
         this.count = 0;
@@ -11,6 +15,21 @@ class StringCalculator{
         this.count++;
         if(numbers==="")return 0;
         let delm = /,|\n/;
+
+        if(numbers[0]==="/" && numbers[1]==="/" && numbers[2]==="["){
+            const index = numbers.indexOf("]\n"); 
+            let delimeters = numbers.slice(3, index+1);
+            let str="";
+            while(delimeters.indexOf("]") !== -1){
+                let last= delimeters.indexOf("]");
+                let current = delimeters.slice(0, last);
+                str += escapeRegex(current) + "|";
+                delimeters = delimeters.slice(last+2);
+            }
+            str = str.slice(0, -1);
+            delm = new RegExp(str);
+            numbers = numbers.slice(index+2); 
+        }
 
         if(numbers[0]==="/" && numbers[1]==="/" && numbers[2]==="["){
             const index = numbers.indexOf("]\n"); 
