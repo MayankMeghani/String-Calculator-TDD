@@ -65,3 +65,9 @@ test("returning sum with any number of delimeters",()=>{
     expect(calc.Add("//[***]\n1***2***3")).toBe(6);
     expect(calc.Add("//[##]\n5##6##7")).toBe(18); 
 })
+
+test("returning sum with multiple delimeters",()=>{
+    const calc = new StringCalculator();
+    expect(calc.Add("//[*][%]\n1*2%3")).toBe(6);
+    expect(calc.Add("//[+][/]\n5+6/7")).toBe(18); 
+})
